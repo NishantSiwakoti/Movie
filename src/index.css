@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.loader {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.dot1,
+.dot2 {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.dot2 {
+  animation-delay: -1s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.scroll-container {
+  scroll-behavior: smooth;
+}
+.genre-button {
+  padding: 10px 20px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+}
+
+.genre-button.active {
+  background-color: #e50914;
+}
+
+.genre-button:hover {
+  background-color: #ff0a16;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #1a202c;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #e53e3e;
+  border-radius: 20px;
+  border: 3px solid #1a202c;
+}
+
+/* Firefox */
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #e53e3e #1a202c;
+}
