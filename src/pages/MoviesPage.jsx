@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState(() => {
-    const savedGenre = localStorage.getItem("selectedGenre");
-    return savedGenre ? savedGenre : "marvel";
-  });
+  const [selectedGenre, setSelectedGenre] = useState(() => {});
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const observer = useRef();
