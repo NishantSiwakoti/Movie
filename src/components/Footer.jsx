@@ -8,7 +8,7 @@ const Footer = () => {
           This project is for educational purposes only.
         </p>
         <p className="text-base mt-4">
-          &copy; {new Date().getFullYear()}{" "}
+          Developed by
           <a
             href="https://www.nishantshiwakoti.com.np/"
             className="text-green-500 hover:text-green-400 hover:underline"
@@ -17,7 +17,6 @@ const Footer = () => {
           >
             Nishant Siwakoti
           </a>{" "}
-          All rights reserved.
         </p>
       </div>
     </footer>
