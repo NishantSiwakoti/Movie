@@ -66,7 +66,7 @@ const MovieDetail = () => {
   const imageUrl = `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`;
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,

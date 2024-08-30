@@ -11,12 +11,12 @@ const Footer = () => {
           Developed by
           <a
             href="https://www.nishantshiwakoti.com.np/"
-            className="text-green-500 hover:text-green-400 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-green-400 ml-1"
           >
             Nishant Siwakoti
-          </a>{" "}
+          </a>
         </p>
       </div>
     </footer>

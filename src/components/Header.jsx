@@ -47,47 +47,62 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-gray-900 to-black text-white shadow-lg sticky top-0 z-50 transition-all duration-300 ease-in-out">
       <div className="container mx-auto flex items-center justify-between p-4">
         <Link to="/" className="flex items-center">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-600 border-b-4 border-yellow-400">
+          <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-600 border-b-4 border-yellow-500 hover:scale-105 transform transition duration-300 ease-in-out">
             ZAPMOVIES
           </h1>
         </Link>
 
-        <nav className="hidden md:flex items-center flex-grow justify-center space-x-6">
+        <nav className="hidden md:flex items-center flex-grow justify-center space-x-8">
           <NavLink
             to="/"
-            className="hover:text-gray-400 transition duration-300"
-            activeClassName="text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-500 border-b-2 border-yellow-500 font-semibold transition duration-300"
+                : "hover:text-gray-300 transition duration-300"
+            }
           >
             Home
           </NavLink>
           <NavLink
             to="/movies"
-            className="hover:text-gray-400 transition duration-300"
-            activeClassName="text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-500 border-b-2 border-yellow-500 font-semibold transition duration-300"
+                : "hover:text-gray-300 transition duration-300"
+            }
           >
             Movies
           </NavLink>
           <NavLink
             to="/bollywood"
-            className="hover:text-gray-400 transition duration-300"
-            activeClassName="text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-500 border-b-2 border-yellow-500 font-semibold transition duration-300"
+                : "hover:text-gray-300 transition duration-300"
+            }
           >
             Bollywood
           </NavLink>
           <NavLink
             to="/inseries"
-            className="hover:text-gray-400 transition duration-300"
-            activeClassName="text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-500 border-b-2 border-yellow-500 font-semibold transition duration-300"
+                : "hover:text-gray-300 transition duration-300"
+            }
           >
             Indian Series
           </NavLink>
           <NavLink
             to="/tv-shows"
-            className="hover:text-gray-400 transition duration-300"
-            activeClassName="text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-yellow-500 border-b-2 border-yellow-500 font-semibold transition duration-300"
+                : "hover:text-gray-300 transition duration-300"
+            }
           >
             TV Shows
           </NavLink>
@@ -100,7 +115,7 @@ const Header = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-gray-800 text-white px-4 py-2 rounded-full pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+              className="bg-gray-800 text-white px-4 py-2 rounded-full pl-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full transition duration-300"
             />
             <AiOutlineSearch
               className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400"
@@ -126,58 +141,79 @@ const Header = () => {
         <div className="md:hidden flex items-center ml-auto">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-gray-400 focus:outline-none relative z-50"
+            className="text-gray-400 focus:outline-none relative z-50 transition-transform duration-300"
           >
             {isMobileMenuOpen ? (
-              <AiOutlineClose size={24} className="text-red-600" />
+              <AiOutlineClose
+                size={24}
+                className="text-red-600 transform rotate-180"
+              />
             ) : (
-              <AiOutlineMenu size={24} className="text-red-600" />
+              <AiOutlineMenu
+                size={24}
+                className="text-red-600 transform rotate-180"
+              />
             )}
           </button>
         </div>
       </div>
 
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-90 transition-transform transform ${
+        className={`fixed inset-0 bg-gray-900 bg-opacity-95 backdrop-blur-lg transform transition-transform duration-500 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } md:hidden flex flex-col items-center justify-center space-y-6 p-6`}
+        } md:hidden flex flex-col items-center justify-center space-y-8 p-6`}
       >
         <NavLink
           to="/"
-          className="text-2xl font-semibold text-white hover:text-gray-400 transition duration-300"
-          activeClassName="text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-2xl font-semibold text-yellow-500 transition duration-300"
+              : "text-2xl font-semibold text-white hover:text-gray-300 transition duration-300"
+          }
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Home
         </NavLink>
         <NavLink
           to="/movies"
-          className="text-2xl font-semibold text-white hover:text-gray-400 transition duration-300"
-          activeClassName="text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-2xl font-semibold text-yellow-500 transition duration-300"
+              : "text-2xl font-semibold text-white hover:text-gray-300 transition duration-300"
+          }
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Movies
         </NavLink>
         <NavLink
           to="/bollywood"
-          className="text-2xl font-semibold text-white hover:text-gray-400 transition duration-300"
-          activeClassName="text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-2xl font-semibold text-yellow-500 transition duration-300"
+              : "text-2xl font-semibold text-white hover:text-gray-300 transition duration-300"
+          }
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Bollywood
         </NavLink>
         <NavLink
           to="/inseries"
-          className="text-2xl font-semibold text-white hover:text-gray-400 transition duration-300"
-          activeClassName="text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-2xl font-semibold text-yellow-500 transition duration-300"
+              : "text-2xl font-semibold text-white hover:text-gray-300 transition duration-300"
+          }
           onClick={() => setIsMobileMenuOpen(false)}
         >
           Indian Series
         </NavLink>
         <NavLink
           to="/tv-shows"
-          className="text-2xl font-semibold text-white hover:text-gray-400 transition duration-300"
-          activeClassName="text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-2xl font-semibold text-yellow-500 transition duration-300"
+              : "text-2xl font-semibold text-white hover:text-gray-300 transition duration-300"
+          }
           onClick={() => setIsMobileMenuOpen(false)}
         >
           TV Shows
@@ -191,7 +227,7 @@ const Header = () => {
             placeholder="Search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-gray-800 text-white px-4 py-2 rounded-full pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+            className="bg-gray-800 text-white px-4 py-2 rounded-full pl-10 focus:outline-none focus:ring-2 focus:ring-yellow-500 w-full transition duration-300"
           />
           <AiOutlineSearch
             className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400"

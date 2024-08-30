@@ -66,7 +66,7 @@ const SeriesDetail = () => {
   const imageUrl = `https://image.tmdb.org/t/p/original/${series.backdrop_path}`;
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
