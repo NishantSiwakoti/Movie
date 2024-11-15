@@ -37,7 +37,6 @@ const Header = () => {
 
     return () => clearTimeout(debounceTimeout);
   }, [searchTerm]);
-
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
