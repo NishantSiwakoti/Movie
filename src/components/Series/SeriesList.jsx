@@ -62,7 +62,7 @@ const SeriesList = ({ endpoint, title, genreId, extraParams = {} }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },

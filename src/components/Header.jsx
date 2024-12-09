@@ -238,10 +238,23 @@ const Header = () => {
                 <Link
                   key={result.id}
                   to={`/${result.media_type}/${result.id}`}
-                  className="block px-4 py-2 hover:bg-gray-700"
+                  className="flex items-center px-4 py-2 hover:bg-gray-700"
                   onClick={() => setSearchTerm("")}
                 >
-                  {result.title || result.name}
+                  {result.poster_path || result.profile_path ? (
+                    <img
+                      src={`https://image.tmdb.org/t/p/w92${
+                        result.poster_path || result.profile_path
+                      }`}
+                      alt={result.title || result.name}
+                      className="w-12 h-12 rounded-lg mr-3 object-cover"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 bg-gray-700 rounded-lg mr-3 flex items-center justify-center">
+                      <span className="text-xs text-gray-400">No Image</span>
+                    </div>
+                  )}
+                  <span>{result.title || result.name}</span>
                 </Link>
               ))}
             </div>
