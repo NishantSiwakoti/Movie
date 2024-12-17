@@ -191,10 +191,10 @@ const Header = () => {
                 onClick={() => setShowDropdown(!showDropdown)}
               />
               {showDropdown && (
-                <div className="absolute right-0 mt-2 bg-gray-800 text-white rounded-lg shadow-lg">
+                <div className="absolute right-0 mt-2 bg-red-800 text-white rounded-lg shadow-lg">
                   <button
                     onClick={handleLogout}
-                    className="block px-4 py-2 w-full text-left hover:bg-gray-700"
+                    className="block px-4 py-2 w-full text-left hover:bg-red-800"
                   >
                     Logout
                   </button>
@@ -221,12 +221,24 @@ const Header = () => {
               Login
             </button>
           ) : (
-            <img
-              src={user.photoURL}
-              alt="User Avatar"
-              className="w-8 h-8 rounded-full"
-              onClick={() => setShowDropdown(!showDropdown)}
-            />
+            <div className="relative">
+              <img
+                src={user.photoURL}
+                alt="User Avatar"
+                className="w-8 h-8 rounded-full cursor-pointer"
+                onClick={() => setShowDropdown(!showDropdown)}
+              />
+              {showDropdown && (
+                <div className="absolute right-0 mt-2 bg-red-700 text-white rounded-lg shadow-lg z-50">
+                  <button
+                    onClick={handleLogout}
+                    className="block px-4 py-2 w-full text-left hover:bg-red-800"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>
