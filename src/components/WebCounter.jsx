@@ -21,7 +21,7 @@ const WebCounter = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100px", // Adjust height as needed
+        height: "100px",
       }}
     >
       <a href="https://www.counter12.com">
