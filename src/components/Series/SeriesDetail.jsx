@@ -4,6 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AdSenseAd from "../AdSenseAd";
 
 const SeriesDetail = () => {
   const { id } = useParams();
@@ -156,6 +157,11 @@ const SeriesDetail = () => {
               </button>
             </div>
           </div>
+        </div>
+
+        {/* AdSense Ad - Below Movie Details */}
+        <div className="my-4">
+          <AdSenseAd />
         </div>
         <div className="mt-8 lg:mt-16">
           <h2 className="text-2xl font-bold text-white mb-4">

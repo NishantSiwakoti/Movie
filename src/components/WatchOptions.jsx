@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AdSenseAd from "./AdSenseAd";
 
 const WatchOptions = () => {
   const { id } = useParams();
@@ -44,6 +45,10 @@ const WatchOptions = () => {
       <h1 className="mt-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
         {movieTitle}
       </h1>
+      {/* AdSense Ad - Below Movie Details */}
+      <div className="my-4">
+        <AdSenseAd />
+      </div>
       <div className="mt-4 w-full max-w-5xl px-4">
         <div className="text-center mb-4 p-4 bg-gray-800 rounded-lg shadow-lg">
           <p className="text-sm sm:text-base">

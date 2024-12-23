@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import AdSenseAd from "../AdSenseAd";
 
 const TVSeriesPlayer = () => {
   const { id } = useParams();
@@ -132,6 +133,10 @@ const TVSeriesPlayer = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4 text-center">{series.name}</h1>
+      {/* AdSense Ad - Below Movie Details */}
+      <div className="my-4">
+        <AdSenseAd />
+      </div>
 
       <div className="flex justify-center mb-4">
         <button

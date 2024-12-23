@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
+import AdSenseAd from "../components/AdSenseAd";
 
 const Bollywood = () => {
   const [movies, setMovies] = useState([]);
@@ -124,6 +125,11 @@ const Bollywood = () => {
             </Link>
           </div>
         ))}
+      </div>
+
+      {/* AdSense Ad - Below Movie Details */}
+      <div className="my-4">
+        <AdSenseAd />
       </div>
       {loading ? (
         <div className="flex items-center justify-center h-64">

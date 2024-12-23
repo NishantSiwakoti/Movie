@@ -4,6 +4,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AdSenseAd from "./AdSenseAd";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -146,6 +147,11 @@ const MovieDetail = () => {
               Watch Now
             </button>
           </div>
+        </div>
+
+        {/* AdSense Ad - Below Movie Details */}
+        <div className="my-4">
+          <AdSenseAd />
         </div>
 
         {/* Similar Movies Section */}

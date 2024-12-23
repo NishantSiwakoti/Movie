@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, Link } from "react-router-dom";
+import AdSenseAd from "../components/AdSenseAd";
 
 const SearchResultsPage = () => {
   const [results, setResults] = useState([]);
@@ -46,6 +47,10 @@ const SearchResultsPage = () => {
   return (
     <div className="p-4">
       <h1 className="text-3xl mb-4">Search Results for "{query}"</h1>
+      {/* AdSense Ad - Below Movie Details */}
+      <div className="my-4">
+        <AdSenseAd />
+      </div>
       <div className="flex mb-4">
         <button
           onClick={() => setActiveTab("movie")}
